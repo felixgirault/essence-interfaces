@@ -8,7 +8,7 @@
 namespace Essence\Cache\Engine;
 
 use Essence\Cache\Engine;
-use Doctrine\Common\Cache\Cache;
+use Doctrine\Common\Cache\Cache as DoctrineCache;
 
 
 
@@ -47,7 +47,7 @@ class Doctrine implements Engine {
 	 *	@param int $ttl The lifeTime to be passed to the save( ) method.
 	 */
 
-	public function __construct( Cache $Cache, $ttl = 0 ) {
+	public function __construct( DoctrineCache $Cache, $ttl = 0 ) {
 
 		$this->_Cache = $Cache;
 		$this->_ttl = $ttl;
@@ -72,7 +72,11 @@ class Doctrine implements Engine {
 
 	public function get( $key, $default = null ) {
 
-		return $this->_Cache->fetch( $key ) ?: $default;
+		$result = $this->_Cache->fetch( $key );
+
+		return ( $result === false )
+			? $default
+			: $result;
 	}
 
 
@@ -84,15 +88,5 @@ class Doctrine implements Engine {
 	public function set( $key, $data ) {
 
 		$this->_Cache->save( $key, $data, $this->_ttl );
-		return $data;
 	}
-
-
-
-	/**
-	 *	{@inheritDoc}
-	 */
-
-	public function clear( ) { }
-
 }
