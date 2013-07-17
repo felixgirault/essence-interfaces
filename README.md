@@ -1,11 +1,32 @@
 Essence interfaces
 ==================
 
-* [Doctrine cache](#doctrine-cache)
-* [Zend cache](#zend-cache)
+A set of interfaces to use third-party libraries within Essence.
 
-Doctrine cache
---------------
+* [Usage](#usage)
+* [Cache interfaces](#cache-interfaces)
+
+Usage
+-----
+
+For example, here is how to use a Doctrine cache throughout the application:
+
+```php
+$Container = new Essence\Di\Container\Standard( );
+
+$Container->set( 'Cache', Essence\Di\Container::unique( function( ) {
+	return new Essence\Cache\Engine\Doctrine(
+		new Doctrine\Common\Cache\FilesystemCache( 'path/to/directory' )
+	);
+}));
+
+$Essence = $Container->get( 'Essence' );
+```
+
+Cache interfaces
+----------------
+
+### Doctrine cache
 
 ```php
 $Cache = new Essence\Cache\Engine\Doctrine(
@@ -14,8 +35,7 @@ $Cache = new Essence\Cache\Engine\Doctrine(
 );
 ```
 
-Zend cache
-----------
+### Zend cache
 
 ```php
 $Cache = new Essence\Cache\Engine\Zend(
