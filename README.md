@@ -5,40 +5,54 @@ A set of interfaces to use third-party libraries within Essence.
 
 * [Usage](#usage)
 * [Cache interfaces](#cache-interfaces)
+* [Http interfaces](#http-interfaces)
 
 Usage
 -----
 
-For example, here is how to use a Doctrine cache throughout the application:
+Here is how to use a Doctrine cache throughout the application:
 
 ```php
-$Container = new Essence\Di\Container\Standard( );
-
-$Container->set( 'Cache', Essence\Di\Container::unique( function( ) {
-	return new Essence\Cache\Engine\Doctrine(
-		new Doctrine\Common\Cache\FilesystemCache( 'path/to/directory' )
-	);
-}));
-
-$Essence = $Container->get( 'Essence' );
+$Essence = Essence\Essence::instance( array(
+	'Cache' => Essence\Di\Container::unique( function( ) {
+		return new Essence\Cache\Engine\Doctrine(
+			new Doctrine\Common\Cache\FilesystemCache( 'path/to/cache/directory' )
+		);
+	})
+));
 ```
 
 Cache interfaces
 ----------------
 
-### Doctrine cache
+### CakePHP
+
+```php
+$Cache = new Essence\Cache\Engine\Cake( 'configuration' );
+```
+
+### Doctrine
 
 ```php
 $Cache = new Essence\Cache\Engine\Doctrine(
-	new Doctrine\Common\Cache\FilesystemCache( 'path/to/directory' ),
+	new Doctrine\Common\Cache\FilesystemCache( 'path/to/cache/directory' ),
 	$ttl
 );
 ```
 
-### Zend cache
+### Zend
 
 ```php
 $Cache = new Essence\Cache\Engine\Zend(
 	Zend\Cache\StorageFactory::adapterFactory( 'apc' )
 );
+```
+
+HTTP interfaces
+---------------
+
+### CakePHP
+
+```php
+$Cache = new Essence\Http\Client\Cake( new HttpSocket( ));
 ```
