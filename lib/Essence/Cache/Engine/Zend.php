@@ -60,10 +60,10 @@ class Zend implements Engine {
 
 	public function get( $key, $default = null ) {
 
-		$result = $this->_Cache->getItem( $key, $success );
+		$data = $this->_Cache->getItem( $key, $success );
 
 		return $success
-			? $result
+			? $data
 			: $default;
 	}
 

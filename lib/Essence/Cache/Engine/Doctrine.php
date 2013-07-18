@@ -72,11 +72,11 @@ class Doctrine implements Engine {
 
 	public function get( $key, $default = null ) {
 
-		$result = $this->_Cache->fetch( $key );
+		$data = $this->_Cache->fetch( $key );
 
-		return ( $result === false )
+		return ( $data === false )
 			? $default
-			: $result;
+			: $data;
 	}
 
 
