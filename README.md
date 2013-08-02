@@ -56,3 +56,21 @@ HTTP interfaces
 ```php
 $Http = new Essence\Http\Client\Cake( new HttpSocket( ));
 ```
+
+Log interfaces
+---------------
+
+### PSR/Monolog
+
+```php
+$Log = new Essence\Log\Logger\Psr( new CustomPsrLogger( ));
+```
+
+```php
+$Monolog = new Monolog\Logger( 'essence' );
+$Monolog->pushHandler(
+	new Monolog\Handler\StreamHandler( 'path/to/log/file' )
+);
+
+$Log = new Essence\Log\Logger\Psr( $Monolog );
+```
