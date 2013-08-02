@@ -54,5 +54,5 @@ HTTP interfaces
 ### CakePHP
 
 ```php
-$Cache = new Essence\Http\Client\Cake( new HttpSocket( ));
+$Http = new Essence\Http\Client\Cake( new HttpSocket( ));
 ```
