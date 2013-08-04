@@ -60,6 +60,12 @@ $Http = new Essence\Http\Client\Cake( new HttpSocket( ));
 Log interfaces
 ---------------
 
+### CakePHP
+
+```php
+$Log = new Essence\Log\Logger\Cake( 'scope' );
+```
+
 ### PSR/Monolog
 
 ```php
