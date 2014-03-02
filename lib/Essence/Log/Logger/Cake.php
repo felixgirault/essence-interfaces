@@ -26,7 +26,7 @@ class Cake implements Logger {
 	 *	@var string|array
 	 */
 
-	protected $_scope = array( );
+	protected $_scope = [ ];
 
 
 
@@ -36,7 +36,7 @@ class Cake implements Logger {
 	 *	@param string|array $scope The scope a log message is being created in.
 	 */
 
-	public function __construct( $scope = array( )) {
+	public function __construct( $scope = [ ]) {
 
 		$this->_scope = $scope;
 	}
@@ -47,7 +47,7 @@ class Cake implements Logger {
 	 *	{@inheritDoc}
 	 */
 
-	public function log( $level, $message, array $context = array( )) {
+	public function log( $level, $message, array $context = [ ]) {
 
 		CakeLog::write( $level, $message, $this->_scope );
 	}

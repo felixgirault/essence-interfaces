@@ -13,13 +13,13 @@ Usage
 Here is how to use a Doctrine cache throughout the application:
 
 ```php
-$Essence = Essence\Essence::instance( array(
+$Essence = Essence\Essence::instance([
 	'Cache' => Essence\Di\Container::unique( function( ) {
 		return new Essence\Cache\Engine\Doctrine(
 			new Doctrine\Common\Cache\FilesystemCache( 'path/to/cache/directory' )
 		);
 	})
-));
+]);
 ```
 
 Cache interfaces

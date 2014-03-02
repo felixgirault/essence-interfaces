@@ -49,7 +49,7 @@ class Psr implements Logger {
 	 *	{@inheritDoc}
 	 */
 
-	public function log( $level, $message, array $context = array( )) {
+	public function log( $level, $message, array $context = [ ]) {
 
 		$this->_Logger->log( $level, $message, $context );
 	}
