@@ -7,7 +7,7 @@
 
 namespace Essence\Cache\Engine;
 
-use Essence\Cache\Engine;
+use Blunt\Cache\Engine;
 use Zend\Cache\Storage\StorageInterface as ZendCache;
 
 

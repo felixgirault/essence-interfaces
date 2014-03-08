@@ -7,8 +7,8 @@
 
 namespace Essence\Http\Client;
 
-use Essence\Http\Client;
-use Essence\Http\Exception;
+use Blunt\Http\Client;
+use Blunt\Http\Exception;
 use HttpSocket;
 
 

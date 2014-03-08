@@ -7,7 +7,7 @@
 
 namespace Essence\Log\Logger;
 
-use Essence\Log\Logger;
+use Blunt\Log\Logger;
 use Psr\Log\LoggerInterface;
 
 
