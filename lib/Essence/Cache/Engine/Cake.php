@@ -18,7 +18,7 @@ use Cache;
  *	@package fg.Essence.Cache.Engine
  */
 
-class Cake implements Engine {
+class Cake extends Engine {
 
 	/**
 	 *	The cache config.

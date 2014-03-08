@@ -18,7 +18,7 @@ use Doctrine\Common\Cache\Cache as DoctrineCache;
  *	@package fg.Essence.Cache.Engine
  */
 
-class Doctrine implements Engine {
+class Doctrine extends Engine {
 
 	/**
 	 *	The Doctrine cache instance.

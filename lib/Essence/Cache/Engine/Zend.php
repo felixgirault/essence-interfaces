@@ -18,7 +18,7 @@ use Zend\Cache\Storage\StorageInterface as ZendCache;
  *	@package fg.Essence.Cache.Engine
  */
 
-class Zend implements Engine {
+class Zend extends Engine {
 
 	/**
 	 *	The Zend cache instance.
