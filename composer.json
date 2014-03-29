@@ -2,7 +2,7 @@
 	"name": "fg/essence-interfaces",
 	"type": "library",
 	"description": "Provides interfaces to use external libraries with Essence.",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"authors": [{
 		"name": "Félix Girault",
 		"email": "felix.girault@gmail.com",
